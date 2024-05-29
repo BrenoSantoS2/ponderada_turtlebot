@@ -6,6 +6,8 @@
 
 cd ponderada_turtlebot
 
+source install/local_setup.bash
+
 colcon build
 
 ---
@@ -16,16 +18,22 @@ ros2 launch webots_ros2_turtlebot robot_launch.py
 
 ---
 
-**Agora basta apenas rodar o código de controle do projeto, atraves do comando:**
+**Em um teminal rode o arquivo que inicia websocket, atraves do comando:**
 
-./play_bash.sh
+cd src/turtlebot_control/turtlebot_control
 
----
-
-**Caso de problema de permissão com o Play_bash, rode o código:**
-
-chmod +x play_bash.sh
+python3 video_server.py
 
 ---
 
-Agora deve estar tudo funcionando ai é só seguir as instruções da própria CLI
+**Agora em outro terminal basta apenas rodar a interface, atraves do comando:**
+
+ros2 run turtlebot_control turtlebot_controller
+
+---
+
+Agora deve estar tudo funcionando ai é só testar as funções e botões no webots e ver a camêra do seu notebook
+
+LINK DO VIDEO FUNCIONANDO:
+
+https://drive.google.com/file/d/1W2eDptg-TP4SXolvxRk6s6QqubPoJ5mw/view?usp=sharing
